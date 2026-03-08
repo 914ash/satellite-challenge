@@ -1,0 +1,15 @@
+node_modules
+dist
+coverage
+.vite
+playwright-report
+test-results
+.env
+.env.local
+.env.*
+!.env.example
+apps/*/node_modules
+apps/*/dist
+apps/*/test-results
+*.log
+*.pid

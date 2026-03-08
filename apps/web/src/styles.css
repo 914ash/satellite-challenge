@@ -1,0 +1,343 @@
+:root {
+  --bg: #0b1320;
+  --panel: #101c2e;
+  --line: #2f3f57;
+  --text: #e7edf5;
+  --muted: #97a8c2;
+  --air: #4ecb71;
+  --sea: #43b7ff;
+  --warn: #f0b550;
+  --bad: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  background: radial-gradient(circle at top, #15243a 0%, #0b1320 70%);
+  color: var(--text);
+}
+
+.app-shell {
+  width: 100%;
+  height: 100%;
+}
+
+.map-first-layout {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.map-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.map-top-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.map-top-overlay > * {
+  pointer-events: auto;
+}
+
+.map-first-layout.panel-open .map-top-overlay {
+  right: calc(min(420px, 92vw) + 24px);
+}
+
+.app-header {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.app-header h1 {
+  margin: 0;
+  padding: 10px 14px;
+  letter-spacing: 0.2px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(16, 28, 46, 0.85);
+  backdrop-filter: blur(6px);
+  font-size: 20px;
+}
+
+.feed-status-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.feed-pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background: rgba(16, 28, 46, 0.88);
+}
+
+.feed-pill-ok {
+  background: rgba(78, 203, 113, 0.14);
+}
+
+.feed-pill-degraded {
+  background: rgba(240, 181, 80, 0.14);
+}
+
+.feed-pill-down {
+  background: rgba(255, 107, 107, 0.14);
+}
+
+.map-pill-booting {
+  background: rgba(67, 183, 255, 0.2);
+}
+
+.map-pill-ready {
+  background: rgba(78, 203, 113, 0.2);
+}
+
+.map-pill-degraded {
+  background: rgba(240, 181, 80, 0.2);
+}
+
+.map-pill-fallback {
+  background: rgba(255, 107, 107, 0.2);
+}
+
+.timeline-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(16, 28, 46, 0.88);
+  backdrop-filter: blur(6px);
+  padding: 10px;
+  max-width: 900px;
+}
+
+.mode-button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.mode-button.active {
+  border-color: var(--air);
+}
+
+.timeline-panel label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  width: 100%;
+}
+
+.timeline-panel input[type="range"] {
+  width: 100%;
+}
+
+.map-container,
+.map-fallback {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: linear-gradient(180deg, #132035 0%, #0d1829 100%);
+}
+
+.map-fallback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+  padding: 92px 12px 12px;
+}
+
+.map-fallback p {
+  margin: 0;
+}
+
+.map-marker,
+.fallback-marker {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.marker-aircraft {
+  background: rgba(78, 203, 113, 0.2);
+  color: var(--air);
+}
+
+.marker-vessel {
+  background: rgba(67, 183, 255, 0.2);
+  color: var(--sea);
+}
+
+.selected {
+  border-color: #ffffff;
+}
+
+.entity-panel-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 40;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: rgba(16, 28, 46, 0.9);
+  color: var(--text);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.entity-panel-toggle.open {
+  right: calc(min(420px, 92vw) + 24px);
+}
+
+.entity-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 24;
+  border: 0;
+  background: rgba(9, 15, 26, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.entity-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.entity-slideout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  width: min(420px, 92vw);
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 240ms ease;
+  pointer-events: none;
+}
+
+.entity-slideout.open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.entity-close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(16, 28, 46, 0.9);
+  color: var(--text);
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.entity-panel {
+  position: relative;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px 0 0 12px;
+  background: rgba(16, 28, 46, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 50px 12px 12px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.panel-field {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(151, 168, 194, 0.2);
+}
+
+.panel-field span {
+  color: var(--muted);
+}
+
+.degraded-text {
+  color: var(--warn);
+}
+
+@media (max-width: 1024px) {
+  .map-top-overlay {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .map-first-layout.panel-open .map-top-overlay {
+    right: 12px;
+  }
+
+  .app-header h1 {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  .timeline-panel {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .timeline-panel label {
+    width: 100%;
+  }
+
+  .entity-panel-toggle {
+    top: auto;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .entity-panel-toggle.open {
+    right: 12px;
+  }
+
+  .entity-slideout {
+    width: 100%;
+  }
+
+  .entity-panel {
+    border-radius: 12px 12px 0 0;
+  }
+}

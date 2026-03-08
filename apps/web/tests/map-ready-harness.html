@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Ready Harness</title>
+    <style>
+      html,
+      body,
+      #root {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import React from "/node_modules/.vite/deps/react.js";
+      import ReactDOMClient from "/node_modules/.vite/deps/react-dom_client.js";
+      import "/src/styles.css";
+      import { TacticalMap } from "/src/components/TacticalMap.tsx";
+
+      const entities = [
+        {
+          id: "air:harness-01",
+          source: "aircraft",
+          icao24: "hrn001",
+          callsign: "HRN-READY-01",
+          lat: 25.2,
+          lon: 55.3,
+          headingDeg: 90,
+          speedKnots: 210,
+          altitudeMeters: 9000,
+          updatedAt: 1739000005000
+        }
+      ];
+
+      ReactDOMClient.createRoot(document.querySelector("#root")).render(
+        React.createElement(TacticalMap, {
+          entities,
+          selectedId: null,
+          onSelect: () => undefined,
+          mapboxToken: "diagnostics-token",
+          mapStyleUrl: "mapbox://styles/mapbox/satellite-streets-v12"
+        })
+      );
+    </script>
+  </body>
+</html>
