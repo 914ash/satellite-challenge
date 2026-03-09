@@ -1,0 +1,19 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0A141B"/>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="80" y="84" width="636" height="736" rx="34" fill="#10222D" stroke="#315467"/>
+  <text x="122" y="176" fill="#F2EFE7" font-size="84" font-family="Georgia, serif">SATELLITE</text>
+  <text x="122" y="254" fill="#F2EFE7" font-size="84" font-family="Georgia, serif">CHALLENGE</text>
+  <text x="122" y="334" fill="#78DFFF" font-size="24" font-family="'Courier New', monospace">AIR + SEA TRACKING / REPLAY / OPERATOR REVIEW</text>
+  <text x="122" y="428" fill="#CAD9DE" font-size="31" font-family="'Trebuchet MS', sans-serif">Tactical map surface for tracking entities,</text>
+  <text x="122" y="470" fill="#CAD9DE" font-size="31" font-family="'Trebuchet MS', sans-serif">scrubbing history, and reviewing behavior.</text>
+  <rect x="122" y="564" width="550" height="124" rx="24" fill="#163543" stroke="#3E6A7D"/>
+  <text x="158" y="626" fill="#F2EFE7" font-size="24" font-family="'Courier New', monospace">REACT / EXPRESS / SHARED CONTRACTS / REPLAY</text>
+  <defs>
+    <linearGradient id="bg" x1="80" y1="56" x2="1518" y2="844" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#122530"/>
+      <stop offset="0.55" stop-color="#173949"/>
+      <stop offset="1" stop-color="#0A141B"/>
+    </linearGradient>
+  </defs>
+</svg>

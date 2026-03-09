@@ -1,5 +1,7 @@
 # Satellite Challenge
 
+![Satellite Challenge cover](assets/covers/cover.svg)
+
 Satellite Challenge is a map-based dashboard for tracking ships and aircraft, replaying recent activity, and reviewing individual entities in context.
 It pairs a TypeScript API with a React client, so a reviewer can see the ingest pipeline, the shared contracts, and the operator surface in one repo.
 
