@@ -1,5 +1,5 @@
 # Satellite Challenge
-
+This project explores how open source information can be combined into a dynamic and engaging common operating picture. 
 Satellite Challenge is a map-based dashboard for tracking ships and aircraft, replaying recent activity, and reviewing individual entities in context.
 It pairs a TypeScript API with a React client, so a reviewer can see the ingest pipeline, the shared contracts, and the operator surface in one repo.
 
@@ -50,8 +50,5 @@ npm run test:e2e -w @sat/web
 2. Read [docs/architecture.md](docs/architecture.md) for the ingest and replay design.
 3. Review [docs/landing.md](docs/landing.md) for a quick walkthrough of the screenshots.
 
-## Project Background
-
-This public repo is the cleaned-up version of a larger challenge workspace. Earlier experiments and secret-bearing files were removed so the repo shows the strongest implementation path instead of the full scratch history.
 
 See [docs/landing.md](docs/landing.md) and [docs/publishing-notes.md](docs/publishing-notes.md) for more context.
