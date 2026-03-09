@@ -2,7 +2,7 @@
 
 ## Canonical Public Version
 
-This folder is the public candidate. Earlier challenge attempts and scratch variants were moved out of the featured path.
+This folder is the public version of the project. Earlier challenge attempts and scratch variants were removed so the repo stays readable.
 
 ## Secret Handling
 
@@ -12,8 +12,8 @@ This folder is the public candidate. Earlier challenge attempts and scratch vari
 
 ## Public Framing
 
-When publishing this repo, describe it as:
+When describing this repo, keep the language simple:
 
-- a geospatial tracking challenge project
-- an operator-centric dashboard
-- a defense-adjacent prototype built from public and commercial-style feed integrations
+- it is a map-based tracking dashboard
+- it combines multiple feeds behind one API and one web app
+- it is meant to be reviewed as a working interface, not as a challenge archive

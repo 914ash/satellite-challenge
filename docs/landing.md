@@ -1,36 +1,22 @@
-# Satellite Challenge Landing
+# Satellite Challenge Walkthrough
 
-![Satellite Challenge cover](../assets/covers/cover.svg)
-
-## What This Is
-
-Satellite Challenge is a realtime maritime and air tracking dashboard built around geospatial awareness, replay, and operator review.
-
-## Who It Is For
-
-This repo is for reviewers looking for a defense-adjacent interface case study: live tracks, replay controls, entity review, and a clear split between UI and aggregation layers.
-
-## Why This Exists
-
-The original challenge work lived across multiple iterations. This repo exists to present the strongest version in a public-safe form: one API, one web interface, one shared-types package, and a cleaner narrative about what the system does well.
+Satellite Challenge is easiest to understand from the screen first: it is a live tracking dashboard with replay and entity review, not just a map demo.
 
 ## Screenshot Walkthrough
 
-![Satellite dashboard](../visual-walkthrough-dashboard.png)
-The main dashboard demonstrates tactical density without losing navigability.
+![Satellite dashboard](../satellite-challenge-screenshot-1.png)
+The dashboard view shows the main job of the app: watch traffic, switch between entities, and keep the map readable while the feed stays busy.
 
-![Satellite map](../artifacts/map-default.png)
-The map view shows the repo's core promise: entity tracking in geographic context, with a surface designed for review rather than casual browsing.
+![Satellite map](../satellite-challenge-screenshot-2.png)
+The map view shows the value of the project. Tracks stay in geographic context, and the side panel keeps the details close without swallowing the map.
 
-## Quick Evaluation
+## What To Review
 
-1. Read the top-level [README.md](../README.md) for the fast path.
-2. Inspect `apps/api` for ingestion and replay behavior.
-3. Inspect `apps/web` for the operator surface and map-state decisions.
+1. Start with [README.md](../README.md) for the short version.
+2. Inspect `apps/api` if you want the ingest and replay path.
+3. Inspect `apps/web` if you want the map interactions and operator flow.
+4. Read [architecture.md](architecture.md) if you want the system layout after that.
 
-## Repo Signals
+## Notes
 
-- public-safe canonical version of a multi-iteration project
-- screenshot evidence in the repo root
-- clean environment variable story
-- tactical framing instead of challenge-dump presentation
+This repo is the public version of a larger challenge project. The point of the cleanup was simple: keep the version worth reviewing and cut the rest.
