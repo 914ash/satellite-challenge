@@ -1,27 +1,29 @@
 # Satellite Challenge
 
-Satellite Challenge is a map-based dashboard for tracking ships and aircraft, replaying recent activity, and reviewing individual entities in context.
-It pairs a TypeScript API with a React client, so a reviewer can see the ingest pipeline, the shared contracts, and the operator surface in one repo.
+Satellite Challenge is a tracking dashboard for ships and aircraft with replay controls, shared API contracts, and entity-focused review. It pairs a TypeScript API with a React client so the ingest path and the operator surface can be reviewed together.
 
 ![Satellite Challenge dashboard](satellite-challenge-screenshot-1.png)
 ![Satellite Challenge map](satellite-challenge-screenshot-2.png)
 
-## What It Does
+- **Status:** Active prototype
+- **Stack:** TypeScript, Express, React, shared types, map UI
+- **Problem:** Live maritime and aviation feeds are difficult to interpret without shared contracts, replay, and a readable review surface.
 
-- pulls maritime and aviation feeds into one API
-- normalizes live data into shared types the web app can consume
-- shows tracks on a tactical map with side-panel detail
-- supports replay so an operator can scrub recent activity instead of only watching the live feed
+## Why It Matters
 
-## How It Works
+- It is the strongest full-stack operator dashboard in the current public set.
+- It keeps ingestion, replay, and UI decisions visible instead of splitting them across disconnected repos.
+- It shows how shared contracts make a live map interface more reliable to evolve.
 
-- `apps/api`: Express API, feed polling, replay buffer, normalization, and enrichment
-- `apps/web`: React map UI, entity panel, status bar, and replay controls
-- `packages/shared-types`: contracts shared by the API and the web app
+## Repository Layout
+
+- `apps/api`: feed polling, replay buffer, normalization, and enrichment
+- `apps/web`: map UI, entity panel, status bar, and replay controls
+- `packages/shared-types`: contracts shared by the API and web app
 
 ## Run Locally
 
-Copy `.env.example` to `.env` and fill in the providers you want to use:
+Copy `.env.example` to `.env` and set the providers you want to use:
 
 - `MAPBOX_ACCESS_TOKEN`
 - `AISSTREAM_API_KEY`
@@ -37,18 +39,16 @@ npm run dev
 - API: `http://localhost:4000`
 - Web: `http://localhost:5173`
 
-## Test
+## Verification
 
 ```bash
 npm test
 npm run test:e2e -w @sat/web
 ```
 
-## What To Look At First
+## What To Read Next
 
-1. Open the web app and inspect the replay controls and entity detail flow.
-2. Read [docs/architecture.md](docs/architecture.md) for the ingest and replay design.
-3. Review [docs/landing.md](docs/landing.md) for a quick walkthrough of the screenshots.
-
-
-See [docs/landing.md](docs/landing.md) and [docs/publishing-notes.md](docs/publishing-notes.md) for more context.
+1. `docs/landing.md` for the short walkthrough
+2. `docs/architecture.md` for ingest and replay design
+3. `apps/api` for the feed path
+4. `apps/web` for the operator workflow
