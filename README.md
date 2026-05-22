@@ -1,27 +1,27 @@
-# Satellite Challenge
+# Satellite challenge
 
-Satellite Challenge is a tracking dashboard for ships and aircraft with replay controls, shared API contracts, and entity-focused review. It pairs a TypeScript API with a React client so the ingest path and the operator surface can be reviewed together.
+Satellite Challenge is a tracking dashboard for ships and aircraft. It pairs replay controls, shared API contracts and entity-focused review so the ingest path and operator surface can be reviewed together.
 
 ![Satellite Challenge dashboard](satellite-challenge-screenshot-1.png)
 ![Satellite Challenge map](satellite-challenge-screenshot-2.png)
 
 - **Status:** Active prototype
 - **Stack:** TypeScript, Express, React, shared types, map UI
-- **Problem:** Live maritime and aviation feeds are difficult to interpret without shared contracts, replay, and a readable review surface.
+- **Problem:** Live maritime and aviation feeds are hard to interpret without shared contracts, replay and a readable review surface.
 
-## Why It Matters
+## Why it matters
 
 - It is the strongest full-stack operator dashboard in the current public set.
-- It keeps ingestion, replay, and UI decisions visible instead of splitting them across disconnected repos.
+- It keeps ingestion, replay and UI decisions visible instead of splitting them across disconnected repos.
 - It shows how shared contracts make a live map interface more reliable to evolve.
 
-## Repository Layout
+## Repository layout
 
-- `apps/api`: feed polling, replay buffer, normalization, and enrichment
-- `apps/web`: map UI, entity panel, status bar, and replay controls
+- `apps/api`: feed polling, replay buffer, normalization and enrichment
+- `apps/web`: map UI, entity panel, status bar and replay controls
 - `packages/shared-types`: contracts shared by the API and web app
 
-## Run Locally
+## Run locally
 
 Copy `.env.example` to `.env` and set the providers you want to use:
 
@@ -46,7 +46,7 @@ npm test
 npm run test:e2e -w @sat/web
 ```
 
-## What To Read Next
+## What to read next
 
 1. `docs/landing.md` for the short walkthrough
 2. `docs/architecture.md` for ingest and replay design
